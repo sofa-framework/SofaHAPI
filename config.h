@@ -22,9 +22,15 @@
 *                                                                             *
 * Contact information: contact@sofa-framework.org                             *
 ******************************************************************************/
-#ifndef INITSOFAHAPI_H
-#define INITSOFAHAPI_H
+#ifndef SOFAHAPI_CONFIG_H
+#define SOFAHAPI_CONFIG_H
 
-#include <SofaHAPI/SofaHAPI.h>
+#include <sofa/helper/system/config.h>
 
-#endif // SOFAHAPI_INITSOFAHAPI_H
+#ifdef SOFA_BUILD_SOFAHAPI
+#  define SOFA_SOFAHAPI_API SOFA_EXPORT_DYNAMIC_LIBRARY
+#else
+#  define SOFA_SOFAHAPI_API SOFA_IMPORT_DYNAMIC_LIBRARY
+#endif
+
+#endif
